@@ -1,28 +1,9 @@
-import React, {useEffect} from 'react'
-import Prism from "prismjs"
-import "prismjs/themes/prism-tomorrow.css";
+import React from 'react'
 
 const HomePage = () => {
-  useEffect(() => {
-    Prism.highlightAll();
-  },[])
-  return (
-    <div className="Code">
-      
-      <pre>
-      <code className='language-py'>
-     {
-     `
-     import tensorflow as tf
-     import numpy as np
-     ` 
-     }
-    </code>
-      
-        
-      </pre>
-    </div>
-  )
+ return <div>
+   Home
+ </div> 
 }
 
 export default HomePage

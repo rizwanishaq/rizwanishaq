@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 import DeepLearning from "./components/DeepLearning";
 import NodeJs from "./components/NodeJs";
 import HomePage from "./components/HomePage";
+import Model from "./components/Model";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Container>
         <Route path="/deeplearning" component={DeepLearning} />
         <Route path="/nodejs" component={NodeJs} />
+        <Route path="/model" component={Model} />
         <Route path="/" component={HomePage} exact />
         </Container>
       </main>
