@@ -27,6 +27,12 @@ const Header = () => {
                   <i className="fab fa-node"></i>
                   </Nav.Link>
                 </LinkContainer>
+
+                <LinkContainer to="/spanish">
+                  <Nav.Link>
+                  <i className="fas fa-globe-europe"></i>
+                  </Nav.Link>
+                </LinkContainer>
               
             </Nav>
           </Navbar.Collapse>
