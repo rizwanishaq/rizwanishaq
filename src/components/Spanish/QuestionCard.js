@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import { Card, Button} from 'react-bootstrap'
+import QuestionModal from './QuestionModel'
 
-const QuestionCard = ({ question, getNextIndex, getPrevIndex,index, numQuestion }) => {
+
+const QuestionCard = ({ question, getNextIndex, getPrevIndex, index, numQuestion }) => {
     const [answers, setAnswers] = useState([])
 
     const [answered, setAnswered] = useState(false);
     const [selectedOption, setSelectedOption] = useState({});
+
+    const [modalOpen, setModalOpen] = useState(false);
+
+    const closeModal = () => {
+        setModalOpen(false);
+    };
 
     useEffect(() => {
         setAnswers(question.incorrect_answers.concat([question.correct_answer]).sort(() => Math.random() - 0.5))
@@ -22,12 +30,18 @@ const QuestionCard = ({ question, getNextIndex, getPrevIndex,index, numQuestion 
     };
 
 
-    
-    
+
+
 
     return (
         <Card className="text-center">
-            <Card.Header><h4 className="question-text">{question.question}</h4></Card.Header>
+            <Card.Header>
+                <h4 className="question-text float-left">{question.question}</h4>
+                <Button variant="secondary" className="float-right" onClick={(_) => setModalOpen(true)}>
+                    <i className="fas fa-plus"></i>
+                </Button>
+                <QuestionModal isOpen={modalOpen} closeModal={closeModal} />
+            </Card.Header>
             {answers
                 .map((option, index) => {
                     return (

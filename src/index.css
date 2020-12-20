@@ -130,3 +130,7 @@ h2 {
       margin-bottom: 10px;
   }
 }
+
+.add-question img {
+  width: 20px
+}
