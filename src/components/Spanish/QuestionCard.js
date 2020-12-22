@@ -83,6 +83,7 @@ const QuestionCard = ({ question, getNextIndex, getPrevIndex, index, numQuestion
                 }}>
                     <i className="fas fa-chevron-right"></i>
                 </Button>
+                {/* <Link to="https://examenes.cervantes.es/es/manual-ccse-2021" className="text-muted"></Link> */}
             </Card.Footer>
         </Card>
     );

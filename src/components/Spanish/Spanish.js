@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios"
 import QuestionCard from './QuestionCard'
-import { Spinner} from 'react-bootstrap'
+import { Spinner } from 'react-bootstrap'
 
 
 const Spanish = () => {
@@ -9,7 +9,7 @@ const Spanish = () => {
     const [index, setIndex] = useState(0)
     const [loading, setLoading] = useState(false)
 
-   
+
 
     useEffect(() => {
         const getQuestions = async () => {
@@ -36,7 +36,15 @@ const Spanish = () => {
 
     return (
         <>
-            {loading && <Spinner animation="grow" as="div" />}
+            {
+                loading && <Spinner
+                    as="span"
+                    animation="grow"
+                    size="sm"
+                    role="status"
+                    aria-hidden="true"
+                />
+            }
             {
                 questions.length > 0 && <QuestionCard
                     question={questions[parseInt(index)]}
@@ -46,7 +54,7 @@ const Spanish = () => {
                     numQuestion={questions.length}
                 />
             }
-            
+
         </>
     )
 }
