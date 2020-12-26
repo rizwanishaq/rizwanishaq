@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import QuestionCard from './QuestionCard'
-import { Spinner } from 'react-bootstrap'
 import useFetch from './useFetch'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import Loader from 'react-loader-spinner'
+
 
 
 const Spanish = () => {
@@ -19,13 +21,13 @@ const Spanish = () => {
     }
 
 
-    if (loading) return <Spinner
-        as="span"
-        animation="grow"
-        size="sm"
-        role="status"
-        aria-hidden="true"
-    />
+    if (loading) return  <Loader
+    type="Puff"
+    color="#00BFFF"
+    height={100}
+    width={100}
+    timeout={3000} //3 secs
+ />
 
     if(error) return <h1>{error}</h1>
 

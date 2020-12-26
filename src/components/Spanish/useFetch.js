@@ -15,10 +15,11 @@ const useFetch = (uri) => {
                 uri
             );
             setQuestions(response.data.data);
+            setLoading(false)
+
         }
         try {
             getQuestions()
-            setLoading(false)
             
         } catch (error) {
             setError(error)
